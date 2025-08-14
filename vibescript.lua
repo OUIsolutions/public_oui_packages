@@ -18,7 +18,8 @@ function install()
 
     os.execute("sudo chmod +x vibescript.out ")
     os.execute("sudo mv vibescript.out  /usr/bin/vibescript")
-    return true     
+
+    return true
 end
 
 function remove()
