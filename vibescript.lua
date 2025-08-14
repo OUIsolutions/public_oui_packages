@@ -9,7 +9,7 @@ function install()
 
     end 
     if not version then
-        os.execute('gh release download --repo OUIsolutions/VibeScript --pattern "vibescript.out"') 
+        os.execute('curl -L https://github.com/OUIsolutions/VibeScript/releases/latest/download/vibescript.out -o vibescript.out') 
     end
     if not dtw.isfile("vibescript.out") then
         print("Error: vibescript.out not found")
