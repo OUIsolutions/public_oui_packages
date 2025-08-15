@@ -1,5 +1,5 @@
 
-function install()
+function PushBlind.actions.install()
 
     dtw.remove_any("vibescript.out")
     local version = argv.get_flag_arg_by_index({ "version" },1)
@@ -22,6 +22,6 @@ function install()
     return true
 end
 
-function remove()
+function PushBlind.actions.remove()
     os.execute("sudo rm /usr/bin/vibescript")
 end

@@ -1,6 +1,6 @@
 
 
-function update()
+function PushBlind.actions.update()
 
     PushBlind.add_package({
         package_name = "OUIsolutions/public_oui_packages",
@@ -9,4 +9,4 @@ function update()
         force=false
     })
     return true
-end 
+end
