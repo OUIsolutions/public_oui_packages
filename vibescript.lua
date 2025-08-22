@@ -17,11 +17,11 @@ function PushBlind.actions.install()
     end
 
     os.execute("sudo chmod +x vibescript.out ")
-    os.execute("sudo mv vibescript.out  /usr/bin/vibescript")
+    os.execute("sudo mv vibescript.out  /usr/local/bin/vibescript")
 
     return true
 end
 
 function PushBlind.actions.remove()
-    os.execute("sudo rm /usr/bin/vibescript")
+    os.execute("sudo rm /usr/local/bin/vibescript")
 end
