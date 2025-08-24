@@ -7,6 +7,7 @@ pushblind add https://github.com/OUIsolutions/public_oui_packages.git  all.lua  
 to add darwin (example)
 ```bash
 pushblind update public_oui 
+pushblind install darwin
 ```
 
 ### Projects 
