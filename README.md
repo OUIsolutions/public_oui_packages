@@ -9,5 +9,6 @@ pushblind add https://github.com/OUIsolutions/public_oui_packages.git  all.lua  
 | Name                                                    | Description                   | Instalation File                          | 
 |---------------------------------------------------------|-------------------------------|-------------------------------------------|
 |[vibescript](https://github.com/OUIsolutions/VibeScript) |a lua runtime for vibecoding   | [vibescript.lua](/vibescript.lua)         |
+|[darwin](https://github.com/OUIsolutions/Darwin)         |A Boostrapped lua Compiler     | [darwin.lua](/darwin.lua)                 |
 
 
