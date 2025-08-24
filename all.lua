@@ -1,7 +1,8 @@
 
 
 function PushBlind.actions.update()
-    PushBlind.add_same_repo_package({
+    PushBlind.add_package({
+        repo = PushBlind.same,
         filename = "vibescript.lua",
         name = "vibescript",
         force=false
