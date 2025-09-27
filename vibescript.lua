@@ -17,6 +17,8 @@ function PushBlind.actions.install()
             return false
         end
         os.execute("sudo mv vibescript.out /bin/vibescript")
+        os.execute("sudo chmod +x /bin/vibescript")
+
     end 
 
     if os_name == "mac" then 
