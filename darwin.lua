@@ -5,11 +5,11 @@ function PushBlind.actions.install()
         local version = argv.get_flag_arg_by_index({ "version" },1)
         if  version then
             print("version"..version)
-            os.execute('curl -L https://github.com/OUIsolutions/Darwin/releases/download/' .. version .. '/darwin.out -o darwin.out')
+            os.execute('curl -L https://github.com/OUIsolutions/Darwin/releases/download/' .. version .. '/darwin_linux_bin.out -o darwin.out')
 
         end 
         if not version then
-            os.execute('curl -L https://github.com/OUIsolutions/Darwin/releases/latest/download/darwin.out -o darwin.out') 
+            os.execute('curl -L https://github.com/OUIsolutions/Darwin/releases/latest/download/darwin_linux_bin.out -o darwin.out') 
         end
 
         if not dtw.isfile("darwin.out") then
