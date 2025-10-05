@@ -19,7 +19,12 @@ function PushBlind.actions.repo_install()
     os.execute("cd "..repo.." && darwin run_blueprint --target amalgamation")
     os.execute("cd "..repo.. "&& gcc -o darwin.out release/darwin.c")
     os.execute("chmod +x "..repo.."/darwin.out")
-    os.execute("cp "..repo.."/darwin.out /usr/local/bin/darwin")
+
+    local name = argv.get_next_unused()
+    if not name then
+        name = "darwin"
+    end
+    os.execute("cp "..repo.."/darwin.out /usr/local/bin/"..name)
 end
 
 
