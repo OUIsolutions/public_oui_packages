@@ -16,6 +16,10 @@ function PushBlind.actions.publish()
         error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
     end
 
+    dtw.remove_any(repo.."/dependencies")
+    dtw.remove_any(repo.."/release")
+    os.execute("cd "..repo.." && darwin install")
+    os.execute("cd "..repo.." && darwin run_blueprint --mode folder build")
     
     os.execute("cd "..repo.." && vibescript shipyard  release.json")
     print("Published to repo "..repo)
