@@ -16,6 +16,8 @@ function PushBlind.actions.repo_install()
         error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
     end
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder local_build ")
+    os.execute("chmod +x "..repo.."/CWebStudioFirmware")
+    os.execute("sudo cp "..repo.."/CWebStudioFirmware /usr/local/bin/CWebStudioFirmware")
 end
 
 
