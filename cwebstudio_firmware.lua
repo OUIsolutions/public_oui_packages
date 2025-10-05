@@ -10,6 +10,11 @@ function PushBlind.actions.set_repo()
    set_prop("cwebstudio_firmware_repo",path)
 end
 
+function PushBlind.actions.repo_install()
+    
+end
+
+
 function PushBlind.actions.publish()
     local repo = get_prop("cwebstudio_firmware_repo")
     if not repo then

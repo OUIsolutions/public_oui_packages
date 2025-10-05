@@ -9,6 +9,14 @@ function PushBlind.actions.set_repo()
    end
    set_prop("cachify_repo",path)
 end 
+function PushBlind.actions.repo_install()
+    local repo = get_prop("cachify_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo cachify <cachify_repo>' first")
+    end
+    os.execute("cd "..repo.." && vibescript add_script --file cachify.lua cachify")
+end
+
 function PushBlind.actions.publish()
     local repo = get_prop("cachify_repo")
     if not repo then
