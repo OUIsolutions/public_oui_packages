@@ -21,6 +21,13 @@ function PushBlind.actions.update()
         name = "cachify",
         force=false
     })
+
+        PushBlind.add_package({
+        repo = PushBlind.same,
+        filename = "shipyard.lua",
+        name = "shipyard",
+        force=false
+    })
     
     return true
 end
