@@ -9,7 +9,15 @@ function PushBlind.actions.set_repo()
    end
    set_prop("cachify_repo",path)
 end 
+function PushBlind.actions.publish()
+    local repo = get_prop("cachify_repo")
+    if not repo then
+        return print("You need to set a repo first")
+    end
+    os.execute("cd "..repo.." shipyard release.json")
+    print("Published to repo "..repo)
 
+end 
 
 function PushBlind.actions.install()
     if os_name == "linux" then 
