@@ -28,6 +28,22 @@ function PushBlind.actions.repo_install()
 end
 
 
+
+function PushBlind.actions.publish()
+   local repo = get_prop("darwin_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo darwin <darwin_repo>' first")
+    end
+
+    dtw.remove_any(repo.."/dependencies")
+    dtw.remove_any(repo.."/release")
+    os.execute("cd "..repo.." && darwin install darwindeps.json ")
+    os.execute("cd "..repo.." && darwin run_blueprint --target all")
+    os.execute("cd "..repo.." && vibescript shipyard  release.json")
+    print("Published to repo "..repo)
+
+end
+
 function PushBlind.actions.install()
     if os_name == "linux" then 
         dtw.remove_any("darwin.out")
