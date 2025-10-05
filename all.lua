@@ -14,5 +14,13 @@ function PushBlind.actions.update()
         name = "darwin",
         force=false
     })
+
+        PushBlind.add_package({
+        repo = PushBlind.same,
+        filename = "cachify.lua",
+        name = "cachify",
+        force=false
+    })
+    
     return true
 end
