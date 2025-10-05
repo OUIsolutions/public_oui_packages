@@ -1,3 +1,15 @@
+function PushBlind.actions.set_repo()
+   local repo_name = argv.get_next_unused()
+   if not repo_name then
+      return print("You need to provide a repo name")
+   end
+   local path = dtw.get_absolute_path(repo_name)
+   if not path then
+      return print("This repo does not exist")
+   end
+   set_prop("cachify_repo",path)
+end 
+
 
 function PushBlind.actions.install()
     if os_name == "linux" then 
