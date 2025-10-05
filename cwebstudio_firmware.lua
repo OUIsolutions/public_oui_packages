@@ -1,4 +1,26 @@
+function PushBlind.actions.set_repo()
+   local repo_name = argv.get_next_unused()
+   if not repo_name then
+      return print("You need to provide a repo dir")
+   end
+   local path = dtw.get_absolute_path(repo_name)
+   if not path then
+      return print("This repo does not exist")
+   end
+   set_prop("cwebstudio_firmware_repo",path)
+end
 
+function PushBlind.actions.publish()
+    local repo = get_prop("cwebstudio_firmware_repo")
+    if not repo then
+        return print("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
+    end
+
+    
+    os.execute("cd "..repo.." && vibescript shipyard  release.json")
+    print("Published to repo "..repo)
+
+end
 
 function PushBlind.actions.install()
 
