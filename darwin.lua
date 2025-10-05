@@ -40,8 +40,8 @@ function PushBlind.actions.install()
             print("Error: darwin.out not found")
             return false
         end
-        os.execute("sudo mv darwin.out /bin/darwin")
-        os.execute("sudo chmod +x /bin/darwin")
+        os.execute("mv darwin.out /usr/local/bin/darwin")
+        os.execute("chmod +x /usr/local/bin/darwin")
         print("darwin instalado com suscesso")
     end 
 
@@ -68,9 +68,9 @@ end
 
 function PushBlind.actions.remove()
     if os_name == "linux" then
-        os.execute("sudo rm /bin/darwin")
+        os.execute("rm /usr/local/bin/darwin")
     end
     if os_name == "mac" then
-        os.execute("sudo rm /usr/local/bin/darwin")
+        os.execute("rm /usr/local/bin/darwin")
     end
 end
