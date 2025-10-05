@@ -1,7 +1,7 @@
 function PushBlind.actions.set_repo()
    local repo_name = argv.get_next_unused()
    if not repo_name then
-      return print("You need to provide a repo name")
+      return print("You need to provide a repo dir")
    end
    local path = dtw.get_absolute_path(repo_name)
    if not path then
@@ -12,7 +12,7 @@ end
 function PushBlind.actions.publish()
     local repo = get_prop("cachify_repo")
     if not repo then
-        return print("You need to set a repo first")
+        return print("You need to run: 'pushblind set_repo cachify <cachify_repo>' first")
     end
     os.execute("cd "..repo.." && vibescript shipyard  release.json")
     print("Published to repo "..repo)
