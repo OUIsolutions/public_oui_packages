@@ -1,3 +1,26 @@
+function PushBlind.actions.set_repo()
+   local repo_name = argv.get_next_unused()
+   if not repo_name then
+      error("darwin_repo not found usage: pushblind set_repo darwin <darwin_repo>")
+   end
+   local path = dtw.get_absolute_path(repo_name)
+   if not path then
+      error("This repo does not exist")
+   end
+   set_prop("darwin_repo",path)
+end
+
+function PushBlind.actions.repo_install()
+    local repo = get_prop("darwin_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo darwin <darwin_repo>' first")
+    end
+--    os.execute("cd "..repo.." && darwin install darwindeps.json --soft")
+    os.execute("cd "..repo.." && darwin run_blueprint --target amalgamation")
+   -- os.execute("chmod +x "..repo.."/CWebStudioFirmware")
+   -- os.execute("sudo cp "..repo.."/CWebStudioFirmware /usr/local/bin/CWebStudioFirmware")
+end
+
 
 function PushBlind.actions.install()
     if os_name == "linux" then 
