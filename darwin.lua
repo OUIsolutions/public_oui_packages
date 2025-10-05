@@ -28,6 +28,15 @@ function PushBlind.actions.repo_install()
 end
 
 
+function PushBlind.actions.build()
+   local repo = get_prop("darwin_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo darwin <darwin_repo>' first")
+    end
+
+    os.execute("cd "..repo.." && darwin install darwindeps.json --soft")
+    os.execute("cd "..repo.." && darwin run_blueprint --target all")
+end
 
 function PushBlind.actions.publish()
    local repo = get_prop("darwin_repo")
