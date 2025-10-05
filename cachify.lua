@@ -8,7 +8,9 @@ function PushBlind.actions.set_repo()
       error("This repo does not exist")
    end
    set_prop("cachify_repo",path)
-end 
+end
+
+
 function PushBlind.actions.repo_install()
     local repo = get_prop("cachify_repo")
     if not repo then

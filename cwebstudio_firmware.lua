@@ -11,7 +11,11 @@ function PushBlind.actions.set_repo()
 end
 
 function PushBlind.actions.repo_install()
-    
+    local repo = get_prop("cwebstudio_firmware_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
+    end
+    os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder local_build ")
 end
 
 
