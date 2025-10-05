@@ -16,6 +16,14 @@ function PushBlind.actions.update()
         })
 
 
+
+        PushBlind.add_package({
+            repo = PushBlind.same,
+            filename = "luacembed.lua",
+            name = "luacembed",
+            force=false
+        })
+
         PushBlind.add_package({
         repo = PushBlind.same,
         filename = "darwin.lua",
