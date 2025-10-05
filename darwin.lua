@@ -46,6 +46,7 @@ function PushBlind.actions.publish()
 
     dtw.remove_any(repo.."/dependencies")
     dtw.remove_any(repo.."/release")
+
     os.execute("cd "..repo.." && darwin install darwindeps.json ")
     os.execute("cd "..repo.." && darwin run_blueprint --target all")
     os.execute("cd "..repo.." && vibescript shipyard  release.json")
