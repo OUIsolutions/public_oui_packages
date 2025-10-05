@@ -24,9 +24,8 @@ function PushBlind.actions.build()
         error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
     end
     dtw.remove_any(repo.."/release")
-    os.execute("cd "..repo.." && darwin install")
+    os.execute("cd "..repo.." && darwin install darwindeps.json --soft")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder amalgamation_build zip_build")
-
 end
 
 
@@ -35,6 +34,7 @@ function PushBlind.actions.repo_install()
     if not repo then
         error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
     end
+    os.execute("cd "..repo.." && darwin install darwindeps.json --soft")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder local_build ")
     os.execute("chmod +x "..repo.."/CWebStudioFirmware")
     os.execute("sudo cp "..repo.."/CWebStudioFirmware /usr/local/bin/CWebStudioFirmware")
@@ -49,7 +49,7 @@ function PushBlind.actions.publish()
 
     dtw.remove_any(repo.."/dependencies")
     dtw.remove_any(repo.."/release")
-    os.execute("cd "..repo.." && darwin install")
+    os.execute("cd "..repo.." && darwin install darwindeps.json ")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder amalgamation_build zip_build")
 
     os.execute("cd "..repo.." && vibescript shipyard  release.json")
