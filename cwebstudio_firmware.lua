@@ -9,9 +9,8 @@ function PushBlind.actions.install()
         os.execute('curl -L https://github.com/OUIsolutions/CWebStudioFirmware/releases/download/' .. version .. '/amalgamation.c -o CWebStudioFirmware.c')
 
     end 
-    --https://github.com/OUIsolutions/CWebStudioFirmware/releases/download/0.5.0/CWebStudioFirmware.c
     if not version then
-        os.execute('curl -L https://github.com/OUIsolutions/CWebStudioFirmware/releases/latest/download/amalgamation.c -o CWebStudioFirmware.c') 
+        os.execute('curl -L https://github.com/OUIsolutions/CWebStudioFirmware/releases/latest/download/CWebStudioFirmware.c -o CWebStudioFirmware.c') 
     end
     if not dtw.isfile("CWebStudioFirmware.c") then
         print("Error: CWebStudioFirmware.c not found")
