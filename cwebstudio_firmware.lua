@@ -23,8 +23,6 @@ function PushBlind.actions.build()
     if not repo then
         error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
     end
-
-    dtw.remove_any(repo.."/dependencies")
     dtw.remove_any(repo.."/release")
     os.execute("cd "..repo.." && darwin install")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder amalgamation_build zip_build")
