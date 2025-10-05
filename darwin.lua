@@ -17,8 +17,9 @@ function PushBlind.actions.repo_install()
     end
 --    os.execute("cd "..repo.." && darwin install darwindeps.json --soft")
     os.execute("cd "..repo.." && darwin run_blueprint --target amalgamation")
-   -- os.execute("chmod +x "..repo.."/CWebStudioFirmware")
-   -- os.execute("sudo cp "..repo.."/CWebStudioFirmware /usr/local/bin/CWebStudioFirmware")
+    os.execute("cd "..repo.. "&& gcc -o darwin.out release/darwin.c")
+    os.execute("chmod +x "..repo.."/darwin.out")
+    os.execute("sudo cp "..repo.."/darwin.out /usr/bin/darwin")
 end
 
 
