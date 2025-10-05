@@ -10,6 +10,28 @@ function PushBlind.actions.set_repo()
    set_prop("cwebstudio_firmware_repo",path)
 end
 
+function PushBlind.actions.dep_install()
+    local repo = get_prop("cwebstudio_firmware_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
+    end
+    os.execute("cd "..repo.." && darwin install")
+end
+
+function PushBlind.actions.build()
+    local repo = get_prop("cwebstudio_firmware_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo cwebstudio_firmware <cwebstudio_firmware_repo>' first")
+    end
+
+    dtw.remove_any(repo.."/dependencies")
+    dtw.remove_any(repo.."/release")
+    os.execute("cd "..repo.." && darwin install")
+    os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder amalgamation_build zip_build")
+
+end
+
+
 function PushBlind.actions.repo_install()
     local repo = get_prop("cwebstudio_firmware_repo")
     if not repo then
