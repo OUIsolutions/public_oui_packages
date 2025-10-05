@@ -18,6 +18,7 @@ function PushBlind.actions.install()
     end
     os.execute("gcc  -o CWebStudioFirmware.out CWebStudioFirmware.c ")
     dtw.move_any_overwriting("CWebStudioFirmware.out", "/usr/local/bin/CWebStudioFirmware")
+    os.execute("chmod +x /usr/local/bin/CWebStudioFirmware")
     dtw.remove_any("CWebStudioFirmware.c")
 
 end
