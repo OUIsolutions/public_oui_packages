@@ -14,7 +14,7 @@ function PushBlind.actions.publish()
     if not repo then
         return print("You need to set a repo first")
     end
-    os.execute("cd "..repo.." shipyard release.json")
+    os.execute("cd "..repo.."vibescript shipyard  release.json")
     print("Published to repo "..repo)
 
 end 
