@@ -19,7 +19,7 @@ function PushBlind.actions.repo_install()
     os.execute("cd "..repo.." && darwin run_blueprint --target amalgamation")
     os.execute("cd "..repo.. "&& gcc -o darwin.out release/darwin.c")
     os.execute("chmod +x "..repo.."/darwin.out")
-    os.execute("sudo cp "..repo.."/darwin.out /usr/bin/darwin")
+    os.execute("cp "..repo.."/darwin.out /usr/bin/darwin")
 end
 
 
