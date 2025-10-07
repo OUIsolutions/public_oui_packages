@@ -16,6 +16,7 @@ function PushBlind.actions.code_open()
     if not repo then
         error("You need to run: 'pushblind set_repo public_oui <public_oui_repo>' first")
     end
+    os.execute("cd "..repo.." && git pull")
     os.execute("code "..repo)
 end
 
