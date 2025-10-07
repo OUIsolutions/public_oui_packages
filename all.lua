@@ -44,6 +44,13 @@ function PushBlind.actions.update()
 
         PushBlind.add_package({
             repo = PushBlind.same,
+            filename = "clpr.lua",
+            name = "clpr",
+            force=false
+        })
+        
+        PushBlind.add_package({
+            repo = PushBlind.same,
             filename = "luacembed.lua",
             name = "luacembed",
             force=false
