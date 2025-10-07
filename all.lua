@@ -34,7 +34,12 @@ function PushBlind.actions.update()
             force=false
         })
 
-
+        PushBlind.add_package({
+            repo = PushBlind.same,
+            filename = "cwebstudio.lua",
+            name = "cwebstudio",
+            force=false
+        })
 
         PushBlind.add_package({
             repo = PushBlind.same,
@@ -47,6 +52,13 @@ function PushBlind.actions.update()
         repo = PushBlind.same,
         filename = "darwin.lua",
         name = "darwin",
+        force=false
+    })
+
+        PushBlind.add_package({
+        repo = PushBlind.same,
+        filename = "luadotheworld.lua",
+        name = "luadotheworld",
         force=false
     })
 

@@ -1,3 +1,60 @@
+function PushBlind.actions.set_repo()
+   local repo_name = argv.get_next_unused()
+   if not repo_name then
+      error("vibescript_repo not found. usage: pushblind set_repo vibescript <vibescript_repo>")
+   end
+   local path = dtw.get_absolute_path(repo_name)
+   if not path then
+      error("This repo does not exist")
+   end
+   set_prop("vibescript_repo", path)
+end
+
+function PushBlind.actions.repo_install()
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target amalgamation")
+    os.execute("cd " .. repo .. " && gcc -o vibescript.out release/vibescript.c")
+    os.execute("chmod +x " .. repo .. "/vibescript.out")
+
+    local name = argv.get_next_unused()
+    if not name then
+        name = "vibescript"
+    end
+    os.execute("sudo cp " .. repo .. "/vibescript.out /usr/local/bin/" .. name)
+end
+
+function PushBlind.actions.build()
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+
+    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
+end
+
+function PushBlind.actions.publish()
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+
+    dtw.remove_any(repo .. "/dependencies")
+    dtw.remove_any(repo .. "/release")
+
+    os.execute("cd " .. repo .. " && darwin install darwindeps.json")
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
+
+    os.execute("cd " .. repo .. " && vibescript shipyard release.json")
+
+    print("✅ Published VibeScript repo at: " .. repo)
+end
+
+
 
 function PushBlind.actions.install()
     if os_name == "linux" then 
