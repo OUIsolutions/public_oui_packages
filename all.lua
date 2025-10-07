@@ -11,7 +11,7 @@ function PushBlind.actions.set_repo()
 end
 
 
-function PushBlind.actions.code_open()
+function PushBlind.actions.code()
     local repo = get_prop("public_oui_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo public_oui <public_oui_repo>' first")
