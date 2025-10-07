@@ -15,7 +15,7 @@ function PushBlind.actions.publish()
     if not repo then
         error("You need to run: 'pushblind set_repo cachify <cachify_repo>' first")
     end
-    
+    os.execute("cd "..repo.." && darwin run_blueprint --target all")
     os.execute("cd "..repo.." && vibescript shipyard  release.json")
     print("Published to repo "..repo)
 
