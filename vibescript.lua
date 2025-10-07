@@ -10,6 +10,15 @@ function PushBlind.actions.set_repo()
    set_prop("vibescript_repo", path)
 end
 
+function PushBlind.actions.code()
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+    os.execute("cd " .. repo .. " && git pull")
+    os.execute("code " .. repo)
+end
+
 function PushBlind.actions.repo_install()
     local repo = get_prop("vibescript_repo")
     if not repo then
