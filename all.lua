@@ -26,16 +26,20 @@ function PushBlind.actions.update(running_dir)
     for i=1,#packages do 
         local file = packages[i]
         local path = dtw.newPath(file)
-        local filename = path.get_only_name()
-        print("Updating package: "..filename)
+        local name = path.get_only_name()
+        print("Updating package: "..name)
+        print("filename: "..file)
+        
+        --PushBlind.add_package({
+        --    repo = PushBlind.same,
+        --   filename = "vibescript.lua",
+        --    name = "vibescript",
+        --   force=false
+        --})
+
     end 
     
-    --PushBlind.add_package({
-    --    repo = PushBlind.same,
-    --   filename = "vibescript.lua",
-    --    name = "vibescript",
-    --   force=false
-    --})
+
 
     return true
 end
