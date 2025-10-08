@@ -20,9 +20,9 @@ function PushBlind.actions.code()
     os.execute("code "..repo)
 end
 
-function PushBlind.actions.update()
+function PushBlind.actions.update(running_dir)
 
-    local packages = dtw.list_files_recursively("packages",true)
+    local packages = dtw.list_files_recursively(running_dir.."/packages",true)
     for i=1,#packages do 
         local file = packages[i]
         local path = dtw.newPlath(file)
