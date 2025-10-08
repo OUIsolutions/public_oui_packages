@@ -25,7 +25,7 @@ function PushBlind.actions.update(running_dir)
     local packages = dtw.list_files_recursively(running_dir.."/packages",true)
     for i=1,#packages do 
         local file = packages[i]
-        local path = dtw.newPlath(file)
+        local path = dtw.newPath(file)
         local filename = path.get_only_name()
         print("Updating package: "..filename)
     end 
