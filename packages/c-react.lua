@@ -4,7 +4,7 @@ create_default_actions("c-react")
 
 
 function PushBlind.actions.publish()
-    local repo = get_prop("c-react")
+    local repo = get_prop("c-react_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo c-react <c-react_repo>' first")
     end
