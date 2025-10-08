@@ -1,4 +1,4 @@
-relative_load('../utils/actions_factory.lua')
+--relative_load('../utils/actions_factory.lua')
 --create_default_actions("vibescript")
 
 function PushBlind.actions.repo_install()
