@@ -8,7 +8,7 @@ function PushBlind.actions.repo_install()
     end
 
     os.execute("cd " .. repo .. " && darwin run_blueprint --target amalgamation")
-    os.execute("cd " .. repo .. " && gcc -o vibescript.out release/vibescript.c")
+    os.execute("cd " .. repo .. " && gcc -o vibescript.out release/amalgamation.c")
     os.execute("chmod +x " .. repo .. "/vibescript.out")
 
     local name = argv.get_next_unused()
