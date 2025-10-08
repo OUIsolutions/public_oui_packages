@@ -1,23 +1,5 @@
-function PushBlind.actions.set_repo()
-   local repo_name = argv.get_next_unused()
-   if not repo_name then
-      error("vibescript_repo not found. usage: pushblind set_repo vibescript <vibescript_repo>")
-   end
-   local path = dtw.get_absolute_path(repo_name)
-   if not path then
-      error("This repo does not exist")
-   end
-   set_prop("vibescript_repo", path)
-end
-
-function PushBlind.actions.code()
-    local repo = get_prop("vibescript_repo")
-    if not repo then
-        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
-    end
-    os.execute("cd " .. repo .. " && git pull")
-    os.execute("code " .. repo)
-end
+relative_load('../utils/actions_factory.lua')
+create_default_actions("vibescript")
 
 function PushBlind.actions.repo_install()
     local repo = get_prop("vibescript_repo")

@@ -1,4 +1,10 @@
 
+
+
+relative_load('../utils/actions_factory.lua')
+create_default_actions("shipyard")
+
+
 function PushBlind.actions.install()
     if os_name == "linux" then 
         local version = argv.get_flag_arg_by_index({ "version" },1)

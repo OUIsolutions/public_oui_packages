@@ -1,14 +1,6 @@
-function PushBlind.actions.set_repo()
-   local repo_name = argv.get_next_unused()
-   if not repo_name then
-      error("cachify_repo not found usage: pushblind set_repo cachify <cachify_repo>")
-   end
-   local path = dtw.get_absolute_path(repo_name)
-   if not path then
-      error("This repo does not exist")
-   end
-   set_prop("cachify_repo",path)
-end
+
+relative_load('../utils/actions_factory.lua')
+create_default_actions("cachify")
 
 
 function PushBlind.actions.repo_install()
