@@ -21,68 +21,21 @@ function PushBlind.actions.code()
 end
 
 function PushBlind.actions.update()
-        PushBlind.add_package({
-            repo = PushBlind.same,
-            filename = "vibescript.lua",
-            name = "vibescript",
-            force=false
-        })
 
-        PushBlind.add_package({
-            repo = PushBlind.same,
-            filename = "cwebstudio_firmware.lua",
-            name = "cwebstudio_firmware",
-            force=false
-        })
-
-        PushBlind.add_package({
-            repo = PushBlind.same,
-            filename = "cwebstudio.lua",
-            name = "cwebstudio",
-            force=false
-        })
-
-        PushBlind.add_package({
-            repo = PushBlind.same,
-            filename = "clpr.lua",
-            name = "clpr",
-            force=false
-        })
-        
-        PushBlind.add_package({
-            repo = PushBlind.same,
-            filename = "luacembed.lua",
-            name = "luacembed",
-            force=false
-        })
-
-        PushBlind.add_package({
-        repo = PushBlind.same,
-        filename = "darwin.lua",
-        name = "darwin",
-        force=false
-    })
-
-        PushBlind.add_package({
-        repo = PushBlind.same,
-        filename = "luadotheworld.lua",
-        name = "luadotheworld",
-        force=false
-    })
-
-        PushBlind.add_package({
-        repo = PushBlind.same,
-        filename = "cachify.lua",
-        name = "cachify",
-        force=false
-    })
-
-        PushBlind.add_package({
-        repo = PushBlind.same,
-        filename = "shipyard.lua",
-        name = "shipyard",
-        force=false
-    })
+    local packages = dtw.list_files_recursively("packages",true)
+    for i=1,#packages do 
+        local file = packages[i]
+        local path = dtw.newPlath(file)
+        local filename = path.get_only_name()
+        print("Updating package: "..filename)
+    end 
     
+    --PushBlind.add_package({
+    --    repo = PushBlind.same,
+    --   filename = "vibescript.lua",
+    --    name = "vibescript",
+    --   force=false
+    --})
+
     return true
 end
