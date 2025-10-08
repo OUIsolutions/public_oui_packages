@@ -18,7 +18,8 @@ function PushBlind.actions.repo_install()
     if not name then
         name = "darwin"
     end
-    os.execute("cp "..repo.."/darwin.out /usr/local/bin/"..name)
+    os.execute("sudo cp "..repo.."/darwin.out /usr/bin/"..name)
+    dtw.remove_any("darwin.out")
 end
 
 
@@ -65,8 +66,8 @@ function PushBlind.actions.install()
             print("Error: darwin.out not found")
             return false
         end
-        os.execute("mv darwin.out /usr/local/bin/darwin")
-        os.execute("chmod +x /usr/local/bin/darwin")
+        os.execute("sudo mv darwin.out /usr/bin/darwin")
+        os.execute("sudo chmod +x /usr/bin/darwin")
         print("darwin instalado com suscesso")
     end 
 
@@ -86,16 +87,16 @@ function PushBlind.actions.install()
             return false
         end
         os.execute("gcc  -o darwin.out darwin.c ")
-        dtw.move_any_overwriting("darwin.out", "/usr/local/bin/darwin")
+        dtw.move_any_overwriting("darwin.out", "/usr/bin/darwin")
         dtw.remove_any("darwin.c")
     end 
 end
 
 function PushBlind.actions.remove()
     if os_name == "linux" then
-        os.execute("rm /usr/local/bin/darwin")
+        os.execute("rm /usr/bin/darwin")
     end
     if os_name == "mac" then
-        os.execute("rm /usr/local/bin/darwin")
+        os.execute("rm /usr/bin/darwin")
     end
 end
