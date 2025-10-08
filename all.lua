@@ -22,15 +22,16 @@ end
 
 function PushBlind.actions.update(running_dir)
 
-    local packages = dtw.list_files_recursively(running_dir.."/packages",true)
+    local packages = dtw.list_files_recursively(running_dir.."/packages",false)
     for i=1,#packages do 
         local file = packages[i]
+        
         local path = dtw.newPath(file)
         local name = path.get_only_name()
     
         PushBlind.add_package({
             repo = PushBlind.same,
-            filename = file,
+            filename = "packages/"..file,
             name = name,
             force=false
         })
