@@ -21,12 +21,27 @@ function create_default_actions(project_name)
         os.execute("cd "..repo.." && git pull")
         os.execute("code "..repo)
     end
+
     function PushBlind.actions.mount()
         local repo = get_prop(project_name.."_repo")
         if not repo then
             error("You need to run: 'pushblind set_repo "..project_name.." <"..project_name.."_repo>' first")
         end
         local current_dir = dtw.get_absolute_path(".")
-        os.execute("mount --bind "..repo.." "..current_dir)
+        local mount_dest = current_dir.."/"..project_name
+        if not dtw.isdir(mount_dest) then
+            os.execute("mkdir  -p "..mount_dest)
+        end
+
+        os.execute(" sudo mount --bind "..repo.." "..mount_dest)
+    end
+    function PushBlind.actions.umount()
+        local current_dir = dtw.get_absolute_path(".")
+        local mount_dest = current_dir.."/"..project_name
+        if not dtw.isdir(mount_dest) then
+            return print("This project is not mounted")
+        end
+        os.execute(" sudo umount "..mount_dest)
+        os.execute(" rm -rf "..mount_dest)
     end
 end   
