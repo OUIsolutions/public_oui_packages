@@ -21,4 +21,12 @@ function create_default_actions(project_name)
         os.execute("cd "..repo.." && git pull")
         os.execute("code "..repo)
     end
+    function PushBlind.actions.mount()
+        local repo = get_prop(project_name.."_repo")
+        if not repo then
+            error("You need to run: 'pushblind set_repo "..project_name.." <"..project_name.."_repo>' first")
+        end
+        local current_dir = dtw.get_absolute_path(".")
+        os.execute("mount --bind "..repo.." "..current_dir)
+    end
 end   
