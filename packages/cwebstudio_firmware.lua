@@ -56,7 +56,7 @@ function PushBlind.actions.install()
     local version = argv.get_flag_arg_by_index({ "version" },1)
     if  version then
         print("version"..version)
-        os.execute('curl -L https://github.com/OUIsolutions/CWebStudioFirmware/releases/download/' .. version .. '/amalgamation.c -o CWebStudioFirmware.c')
+        os.execute('curl -L https://github.com/OUIsolutions/CWebStudioFirmware/releases/download/' .. version .. '/CWebStudioFirmware.c -o CWebStudioFirmware.c')
 
     end 
     if not version then
