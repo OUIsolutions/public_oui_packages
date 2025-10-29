@@ -74,5 +74,6 @@ function PushBlind.actions.install()
 end
 
 function PushBlind.actions.remove()
+    print("inicou o pacote")
     os.execute("sudo rm /usr/local/bin/CWebStudioFirmware")
 end
