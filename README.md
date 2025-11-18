@@ -11,13 +11,14 @@ The Public OUI Packages repository serves as a centralized location for distribu
 ### Adding the Repository
 
 To add this repository to your PushBlind package manager, execute the following command:
+
 https:
 ```bash
 pushblind add https://github.com/OUIsolutions/public_oui_packages.git all.lua --name public_oui
 ```
 ssh: 
 ```bash
-pushblind add git@github.com:OUIsolutions/public_oui_packages.git --name public_oui
+pushblind add git@github.com:OUIsolutions/public_oui_packages.git all.lua --name public_oui
 ```
 
 ### Installing Packages
