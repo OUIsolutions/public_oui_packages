@@ -68,7 +68,7 @@ function PushBlind.actions.install()
     end
     os.execute("gcc  -o CWebStudioFirmware.out CWebStudioFirmware.c ")
     os.execute("sudo mv CWebStudioFirmware.out /usr/local/bin/CWebStudioFirmware")
-    os.execute("sudo chmod +x /bin/CWebStudioFirmware")
+    os.execute("sudo chmod +x /usr/local/bin/CWebStudioFirmware")
     dtw.remove_any("CWebStudioFirmware.c")
 
 end
