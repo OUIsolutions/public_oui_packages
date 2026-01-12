@@ -92,8 +92,16 @@ end
 
 
 function pushblind.actions.scratch_install_deps()
-  print("rodou o scratch_install_deps")
+
 end
+
+
+
+function pushblind.actions.amalgamate()
+
+    os.execute("darwin run_blueprint --target amalgamation")
+end
+
 
 
 
