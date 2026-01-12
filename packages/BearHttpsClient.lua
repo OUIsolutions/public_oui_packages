@@ -1,6 +1,9 @@
 relative_load('../utils/actions_factory.lua')
 create_default_actions("BearHttpsClient")
 
+function PushBlind.actions.build_deps()
+    
+end
 
 function PushBlind.actions.build()
     local repo = get_prop("BearHttpsClient_repo")
