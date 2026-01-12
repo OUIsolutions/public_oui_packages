@@ -6,11 +6,12 @@ function PushBlind.actions.build_deps()
     if not bear_repo then
         error("You need to run: 'pushblind set_repo BearHttpsClient <BearHttpsClient_repo>' first")
     end
+    os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
 
+    
     PushBlind.run_action("c2wasm","build")
     move_dep("c2wasm", "c2wasm.c", "BearHttpsClient", "dependencies/c2wasm.c")
 
-    os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
 end
 
 function PushBlind.actions.build()
