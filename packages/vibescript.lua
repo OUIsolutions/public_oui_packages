@@ -91,8 +91,8 @@ function PushBlind.actions.install()
 end
 
 
-function PushBlind.actions.scratch_install_deps()
-
+function PushBlind.actions.build_deps()
+  PushBlind.run_action("doTheWorld","build")
 end
 
 
