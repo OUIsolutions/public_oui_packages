@@ -1,4 +1,6 @@
 relative_load('../utils/actions_factory.lua')
+relative_load('../utils/utils.lua')
+
 create_default_actions("vibescript")
 
 function PushBlind.actions.repo_install()
@@ -92,7 +94,13 @@ end
 
 
 function PushBlind.actions.build_deps()
-  PushBlind.run_action("doTheWorld","build")
+
+
+    PushBlind.run_action("doTheWorld","build")
+    move_dep("doTheWorld", "release/doTheWorldOne.c", "vibescript", "dependencies/doTheWorldOne.c")
+    move_dep("doTheWorld", "release/doTheWorld.h", "vibescript", "dependencies/doTheWorld.h")
+
+     
 end
 
 
