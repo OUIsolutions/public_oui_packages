@@ -99,7 +99,12 @@ end
 
 function pushblind.actions.amalgamate()
 
-    os.execute("darwin run_blueprint --target amalgamation")
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target amalgamation")
 end
 
 
