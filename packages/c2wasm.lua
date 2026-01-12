@@ -7,6 +7,7 @@ function PushBlind.actions.build()
     if not repo then
         error("You need to run: 'pushblind set_repo c2wasm <c2wasm_repo>' first")
     end
+    error("aaa")
     os.execute("cd "..repo.." && darwin run_blueprint --target all")
     
 end
