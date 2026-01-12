@@ -91,13 +91,13 @@ function PushBlind.actions.install()
 end
 
 
-function pushblind.actions.scratch_install_deps()
+function PushBlind.actions.scratch_install_deps()
 
 end
 
 
 
-function pushblind.actions.amalgamate()
+function PushBlind.actions.amalgamate()
 
     local repo = get_prop("vibescript_repo")
     if not repo then
