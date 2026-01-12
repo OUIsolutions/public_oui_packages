@@ -90,6 +90,15 @@ function PushBlind.actions.install()
     end 
 end
 
+
+function pushblind.actions.scratch_install_deps()
+  print("rodou o scratch_install_deps")
+end
+
+
+
+
+
 function PushBlind.actions.remove()
     os.execute("sudo rm /usr/local/bin/vibescript")
 end
