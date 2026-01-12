@@ -1,4 +1,6 @@
 relative_load('../utils/actions_factory.lua')
+relative_load('../utils/utils.lua')
+
 create_default_actions("BearHttpsClient")
 
 function PushBlind.actions.build_deps()
@@ -8,7 +10,7 @@ function PushBlind.actions.build_deps()
     end
     os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
 
-    
+
     PushBlind.run_action("c2wasm","build")
     move_dep("c2wasm", "c2wasm.c", "BearHttpsClient", "dependencies/c2wasm.c")
 
