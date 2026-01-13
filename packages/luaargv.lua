@@ -9,5 +9,5 @@ function PushBlind.actions.build()
         error("You need to run: 'pushblind set_repo BearHttpsClient <BearHttpsClient_repo>' first")
     end
     
-    os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
+    os.execute("cd " .. repo .. " && darwin run_blueprint ")
 end
