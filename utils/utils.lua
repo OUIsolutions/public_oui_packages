@@ -15,5 +15,5 @@ function move_dep(src_repo,src_file, dest_repo,dest_file)
         error("File not found: " .. src_path)
     end
     local dest_path = dest_repo .. "/" .. dest_file
-    dtw.move_any_overwriting(src_path, dest_path)
+    dtw.copy_any_overwriting(src_path, dest_path)
 end
