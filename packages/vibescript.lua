@@ -34,13 +34,13 @@ function PushBlind.actions.build_deps()
      
 end
 
-function PushBlind.actions.build()
+function PushBlind.actions.amalgamate()
     local repo = get_prop("vibescript_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
     end
 
-    os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target amalgamation")
 end
 
 function PushBlind.actions.publish()
