@@ -19,6 +19,20 @@ function PushBlind.actions.repo_install()
     end
     os.execute("sudo cp " .. repo .. "/vibescript.out /usr/local/bin/" .. name)
 end
+function PushBlind.actions.build_deps()
+    local repo = get_prop("vibescript_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
+    end
+
+    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
+
+    PushBlind.run_action("doTheWorld","build")
+    move_dep("doTheWorld", "release/doTheWorldOne.c", "vibescript", "dependencies/doTheWorldOne.c")
+    move_dep("doTheWorld", "release/doTheWorld.h", "vibescript", "dependencies/doTheWorld.h")
+
+     
+end
 
 function PushBlind.actions.build()
     local repo = get_prop("vibescript_repo")
@@ -26,7 +40,6 @@ function PushBlind.actions.build()
         error("You need to run: 'pushblind set_repo vibescript <vibescript_repo>' first")
     end
 
-    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
     os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
 end
 
@@ -93,15 +106,6 @@ function PushBlind.actions.install()
 end
 
 
-function PushBlind.actions.build_deps()
-
-
-    PushBlind.run_action("doTheWorld","build")
-    move_dep("doTheWorld", "release/doTheWorldOne.c", "vibescript", "dependencies/doTheWorldOne.c")
-    move_dep("doTheWorld", "release/doTheWorld.h", "vibescript", "dependencies/doTheWorld.h")
-
-     
-end
 
 
 
