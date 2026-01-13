@@ -19,6 +19,8 @@ function PushBlind.actions.repo_install()
     end
     os.execute("sudo cp " .. repo .. "/vibescript.out /usr/local/bin/" .. name)
 end
+
+
 function PushBlind.actions.build_deps()
     local repo = get_prop("vibescript_repo")
     if not repo then
@@ -35,6 +37,10 @@ function PushBlind.actions.build_deps()
     move_dep("luaargv", "luargv.lua", "vibescript", "dependencies/luargv.lua")
 
      
+end
+function PushBlind.actions.scratch_install()
+    PushBlind.run_action("vibescript","build_deps") 
+    PushBlind.run_action("vibescript","repo_install") 
 end
 
 function PushBlind.actions.amalgamate()
