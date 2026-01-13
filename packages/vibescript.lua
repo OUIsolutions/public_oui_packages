@@ -32,7 +32,7 @@ function PushBlind.actions.build_deps()
     move_dep("doTheWorld", "release/doTheWorld.h", "vibescript", "dependencies/doTheWorld.h")
 
     PushBlind.run_action("luaargv","build")
-    move_dep("luaargv", "luargv.lua", "vibescript", "luargv.lua")
+    move_dep("luaargv", "luargv.lua", "vibescript", "dependencies/luargv.lua")
 
      
 end
