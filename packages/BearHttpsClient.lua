@@ -10,6 +10,7 @@ function PushBlind.actions.build_deps()
     end
     os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
 
+    print("Building deps c2wasm")
     build_deps({
         project = "BearHttpsClient",
         dep = "c2wasm",
