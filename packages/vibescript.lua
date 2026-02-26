@@ -29,12 +29,24 @@ function PushBlind.actions.build_deps()
 
     os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
 
-    PushBlind.run_action("doTheWorld","build")
-    move_dep("doTheWorld", "release/doTheWorldOne.c", "vibescript", "dependencies/doTheWorldOne.c")
-    move_dep("doTheWorld", "release/doTheWorld.h", "vibescript", "dependencies/doTheWorld.h")
+    build_deps({
+        project = "vibescript",
+        dep = "doTheWorld",
+        actions = {"build"},
+        sources = {
+            { target = "release/doTheWorldOne.c", dest = "dependencies/doTheWorldOne.c" },
+            { target = "release/doTheWorld.h", dest = "dependencies/doTheWorld.h" }
+        }
+    })
 
-    PushBlind.run_action("luaargv","build")
-    move_dep("luaargv", "luargv.lua", "vibescript", "dependencies/luargv.lua")
+    build_deps({
+        project = "vibescript",
+        dep = "luaargv",
+        actions = {"build"},
+        sources = {
+            { target = "luargv.lua", dest = "dependencies/luargv.lua" }
+        }
+    })
 
      
 end

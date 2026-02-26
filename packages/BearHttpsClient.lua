@@ -11,8 +11,14 @@ function PushBlind.actions.build_deps()
     os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
 
 
-    PushBlind.run_action("c2wasm","build")
-    move_dep("c2wasm", "c2wasm.c", "BearHttpsClient", "dependencies/c2wasm.c")
+    build_deps({
+        project = "BearHttpsClient",
+        dep = "c2wasm",
+        actions = {"build"},
+        sources = {
+            { target = "c2wasm.c", dest = "dependencies/c2wasm.c" }
+        }
+    })
 
 end
 
