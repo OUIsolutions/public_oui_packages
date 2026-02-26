@@ -13,7 +13,7 @@ function PushBlind.actions.build_deps()
     build_deps({
         project = "BearHttpsClient",
         dep = "c2wasm",
-        actions = { "build_deps", "build" },
+        actions = {"build"},
         sources = {
             { target = "c2wasm.c", dest = "dependencies/c2wasm.c" }
         }
