@@ -29,6 +29,7 @@ function PushBlind.actions.build_deps()
 
     os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
 
+    print("Building deps doTheWorld")
     build_deps({
         project = "vibescript",
         dep = "doTheWorld",
@@ -39,7 +40,7 @@ function PushBlind.actions.build_deps()
         }
     })
 
-
+    print("Building deps BearHttpsClient")
     build_deps({
         project = "vibescript",
         dep = "BearHttpsClient",
@@ -50,6 +51,7 @@ function PushBlind.actions.build_deps()
         }
     })
 
+    print("Building deps luaargv")
     build_deps({
         project = "vibescript",
         dep = "luaargv",
