@@ -39,6 +39,17 @@ function PushBlind.actions.build_deps()
         }
     })
 
+
+    build_deps({
+        project = "vibescript",
+        dep = "BearHttpsClient",
+        actions = {"build"},
+        sources = {
+            { target = "release/BearHttpsClient.c", dest = "dependencies/BearHttpsClient.c" },
+            { target = "release/BearHttpsClient.h", dest = "dependencies/BearHttpsClient.h" }
+        }
+    })
+
     build_deps({
         project = "vibescript",
         dep = "luaargv",
