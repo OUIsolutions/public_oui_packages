@@ -32,7 +32,7 @@ function PushBlind.actions.build_deps()
     build_deps({
         project = "vibescript",
         dep = "doTheWorld",
-        actions = {"build"},
+        actions = {"build_deps", "build"},
         sources = {
             { target = "release/doTheWorldOne.c", dest = "dependencies/doTheWorldOne.c" },
             { target = "release/doTheWorld.h", dest = "dependencies/doTheWorld.h" }
