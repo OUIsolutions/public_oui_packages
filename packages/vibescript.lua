@@ -43,7 +43,7 @@ function PushBlind.actions.build_deps()
     build_deps({
         project = "vibescript",
         dep = "BearHttpsClient",
-        actions = {"build_deps"},
+        actions = {"build_deps","build"},
         sources = {
             { target = "release/BearHttpsClient.c", dest = "dependencies/BearHttpsClient.c" },
             { target = "release/BearHttpsClient.h", dest = "dependencies/BearHttpsClient.h" }
