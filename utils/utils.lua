@@ -10,7 +10,10 @@ function build_deps(props)
     end
 
     for _, action in ipairs(props.actions) do
-        PushBlind.run_action(props.dep, action)
+        local ok,err = PushBlind.run_action(props.dep, action)
+        if not ok then
+            error(err)
+        end
     end
 
     for _, source in ipairs(props.sources) do
