@@ -92,8 +92,8 @@ function PushBlind.actions.install()
             return false
         end
         os.execute("gcc  -o darwin.out darwin.c ")
-        os.execute("sudo mv darwin.out /usr/local/bin/darwin")
-        os.execute("sudo chmod +x /usr/local/bin/darwin")
+        os.execute("mv darwin.out /usr/local/bin/darwin")
+        os.execute("chmod +x /usr/local/bin/darwin")
         dtw.remove_any("darwin.c")
     end 
 end
