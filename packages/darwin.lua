@@ -18,7 +18,12 @@ function PushBlind.actions.repo_install()
     if not name then
         name = "darwin"
     end
-    os.execute("sudo cp "..repo.."/darwin.out /usr/bin/"..name)
+    
+    if os_name == "mac" then 
+        os.execute("sudo cp "..repo.."/darwin.out /usr/local/bin/"..name)
+    else
+        os.execute("sudo cp "..repo.."/darwin.out /usr/bin/"..name)
+    end
     dtw.remove_any("darwin.out")
 end
 
