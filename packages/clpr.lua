@@ -3,6 +3,21 @@
 relative_load('../utils/actions_factory.lua')
 create_default_actions("clpr")
 
+function PushBlind.actions.build_deps()
+    local repo = get_prop("clpr")
+    if not repo then
+        error("You need to run: 'pushblind set_repo clpr <clpr_repo>' first")
+    end
+
+    build_deps({
+        project = "clpr",
+        dep = "luaHeregitage",
+        actions = {},
+        sources = {
+            { target = "heregitage.lua", dest = "dependencies/herigitage.lua" }
+        }
+    })
+end
 
 function PushBlind.actions.publish()
     local repo = get_prop("clpr")
