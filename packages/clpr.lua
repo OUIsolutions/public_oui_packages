@@ -4,7 +4,7 @@ relative_load('../utils/actions_factory.lua')
 create_default_actions("clpr")
 
 function PushBlind.actions.build_deps()
-    local repo = get_prop("clpr")
+    local repo = get_prop("clpr_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo clpr <clpr_repo>' first")
     end
@@ -20,7 +20,7 @@ function PushBlind.actions.build_deps()
 end
 
 function PushBlind.actions.publish()
-    local repo = get_prop("clpr")
+    local repo = get_prop("clpr_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo clpr <clpr_repo>' first")
     end
