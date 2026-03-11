@@ -10,12 +10,6 @@ function PushBlind.actions.build()
     os.execute("cd "..repo.." && darwin run_blueprint --target all")
 end
 
-function PushBlind.actions.build_deps()
-    -- build_deps action is needed for the recursive build process of dependants to work,
-    -- but since there are no dependencies, just call the build action directly
-    PushBlind.actions.build()
-end
-
 function PushBlind.actions.publish()
     local repo = get_prop("c2wasm_repo")
     if not repo then
