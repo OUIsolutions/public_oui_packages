@@ -25,6 +25,16 @@ function PushBlind.actions.build_deps()
     })
 end
 
+function PushBlind.actions.build()
+    local repo = get_prop("luacembed_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo luacembed <luacembed_repo>' first")
+    end
+
+    print("Building luacembed")
+    os.execute("cd "..repo.." && darwin run_blueprint --target all")
+end
+
 function PushBlind.actions.publish()
    local repo = get_prop("luacembed_repo")
     if not repo then
