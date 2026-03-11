@@ -3,6 +3,11 @@ relative_load('../utils/utils.lua')
 
 create_default_actions("luacembed")
 
+function PushBlind.actions.scratch_install()
+    PushBlind.actions.build_deps()
+    PushBlind.actions.build()
+end
+
 function PushBlind.actions.build_deps()
     build_deps({
         project = "luacembed",
