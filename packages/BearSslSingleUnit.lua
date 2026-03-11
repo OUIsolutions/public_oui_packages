@@ -1,11 +1,11 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("bearssl_single_unit")
-
+create_default_actions("BearSslSingleUnit")
+  
 
 function PushBlind.actions.build()
-    local repo = get_prop("bearssl_single_unit_repo")
+    local repo = get_prop("BearSslSingleUnit_repo")
     if not repo then
-        error("You need to run: 'pushblind set_repo bearssl_single_unit <bearssl_single_unit_repo>' first")
+        error("You need to run: 'pushblind set_repo BearSslSingleUnit <BearSslSingleUnit_repo>' first")
     end
     
     os.execute("cd "..repo.." &&  darwin run_blueprint --mode folder build/ update_bear create_patch build generate_release")
