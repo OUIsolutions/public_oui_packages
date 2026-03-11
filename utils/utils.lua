@@ -22,7 +22,7 @@ function build_deps(props)
     print("\nCopying sources for dependency '" .. props.dep .. "'")
     for _, source in ipairs(props.sources) do
         local src_path = dep_repo .. "/" .. source.target
-        print("\Checking if source file exists: " .. src_path)
+        print("Checking if source file exists: " .. src_path)
         if not dtw.isfile(src_path) then
             error("File not found: " .. src_path)
         end
