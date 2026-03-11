@@ -12,3 +12,5 @@ function PushBlind.actions.publish()
     print("Published to repo "..repo)
 
 end 
+
+-- Project is single file, no build_deps needed

@@ -2,6 +2,7 @@
 relative_load('../utils/actions_factory.lua')
 create_default_actions("cachify")
 
+-- Project is single file, no build_deps needed
 
 function PushBlind.actions.repo_install()
     local repo = get_prop("cachify_repo")
