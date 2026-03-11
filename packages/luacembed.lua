@@ -6,7 +6,7 @@ create_default_actions("luacembed")
 function PushBlind.actions.build_deps()
     build_deps({
         project = "luacembed",
-        dep = "UniversalGarbageCollector",
+        dep = "universalGarbageCollector",
         actions = {"build"},
         sources = {
             { target = "release/UniversalGarbage.h", dest = "dependencies/UniversalGarbage.h" },
