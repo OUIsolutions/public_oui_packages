@@ -11,7 +11,7 @@ function PushBlind.actions.scratch_install()
 
     build_deps({
         project = "cwebstudio",
-        dep = "cJSON",
+        dep = "cjson",
         actions = {},
         sources = {
             { target = "cJSON.c", dest = "dependencies/cJSON.c" },
