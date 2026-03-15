@@ -12,5 +12,16 @@ function PushBlind.actions.scratch_install()
     error("You need to specify the mode: 'pushblind scratch_install silverchain --mode <mode>'")
   end
 
+  local available_build_modes = {}
+  local available_build_modes_raw = dtw.list_files(repo .. "/build/build")
+  for _, file in ipairs(available_build_modes_raw) do
+    table.insert(available_build_modes, file:match("(.*)_build.lua"))
+  end
+
+  if not table.contains(available_build_modes, mode) then
+    error("Invalid mode: " .. mode .. ". Available modes are: " .. table.concat(available_build_modes, ", "))
+  end
+  mode = mode .. "_build"
+
   os.execute("cd " .. repo .. " && darwin run_blueprint build/ --mode folder " .. mode)
 end
