@@ -2,6 +2,15 @@ relative_load('../utils/actions_factory.lua')
 create_default_actions("silverchain")
 
 function PushBlind.actions.scratch_install()
+  local table_contains = function(tbl, val)
+    for _, v in ipairs(tbl) do
+      if v == val then
+        return true
+      end
+    end
+    return false
+  end
+
   local repo = get_prop("silverchain_repo")
   if not repo then
     error("You need to run: 'pushblind set_repo silverchain <silverchain_repo>' first")
@@ -18,7 +27,7 @@ function PushBlind.actions.scratch_install()
     table.insert(available_build_modes, file:match("(.*)_build.lua"))
   end
 
-  if not table.contains(available_build_modes, mode) then
+  if not table_contains(available_build_modes, mode) then
     error("Invalid mode: " .. mode .. ". Available modes are: " .. table.concat(available_build_modes, ", "))
   end
   mode = mode .. "_build"
