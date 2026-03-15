@@ -3,7 +3,7 @@ relative_load('../utils/utils.lua')
 
 create_default_actions("luacembed")
 
-function PushBlind.actions.scratch_install()
+function PushBlind.actions.build_deps()
     local repo = get_prop("luacembed_repo")
     if not repo then
         error("You need to run: 'pushblind set_repo luacembed <luacembed_repo>' first")
