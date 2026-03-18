@@ -9,8 +9,34 @@ function PushBlind.actions.build_deps()
         error("You need to run: 'pushblind set_repo dotheworld <luadotheworld_repo>' first")
     end
 
-    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
-    os.execute("cd " .. repo .. " && darwin run_blueprint build/ --mode folder build_release")
+    build_deps({
+        project = "luadotheworld",
+        dep = "luacembed",
+        actions = {"build_deps"},
+        sources = {
+            { target = "release/LuaCEmbedOne.c", dest = "dependencies/LuaCEmbedOne.c" },
+        }
+    })
+
+    build_deps({
+        project = "luadotheworld",
+        dep = "doTheWorld",
+        actions = {"build_deps"},
+        sources = {
+            { target = "release/doTheWorldOne.c", dest = "dependencies/doTheWorldOne.c" },
+        }
+    })
+end
+
+function PushBlind.actions.build()
+    local repo = get_prop("luadotheworld_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo dotheworld <luadotheworld_repo>' first")
+    end
+
+    
+    PushBlind.run_action("luadotheworld", "build")
+    os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder build_release")
 end
 
 function PushBlind.actions.publish()
