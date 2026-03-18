@@ -35,7 +35,7 @@ function PushBlind.actions.build()
     end
 
     
-    PushBlind.run_action("luadotheworld", "build")
+    PushBlind.run_action("luadotheworld", "build_deps")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder build_release")
 end
 
