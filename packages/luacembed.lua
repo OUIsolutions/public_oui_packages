@@ -28,6 +28,13 @@ function PushBlind.actions.build_deps()
             { target = "release/lua_single_unity.h", dest = "dependencies/lua_single_unity.h" },
         }
     })
+end
+
+function PushBlind.actions.build()
+    local repo = get_prop("luacembed_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo luacembed <luacembed_repo>' first")
+    end
 
     print("Building luacembed")
     os.execute("cd "..repo.." && darwin run_blueprint --target all")
