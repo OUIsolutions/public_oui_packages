@@ -22,7 +22,7 @@ function PushBlind.actions.build_deps()
     dep = "silverchain",
     actions = {"amalgamate"},
     sources = {
-        { target = "release/CSilverChainApiNoDependenciesIncluded.h ", dest = "dependencies/CSilverChainApiNoDependenciesIncluded.h" }
+        { target = "release/SilverChainApiNoDependenciesIncluded.h ", dest = "dependencies/SilverChainApiNoDependenciesIncluded.h" }
     }
   })
 
