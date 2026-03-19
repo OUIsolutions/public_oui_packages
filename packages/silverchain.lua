@@ -26,6 +26,7 @@ function build_package(mode, repo)
 end
 
 function PushBlind.actions.scratch_install()
+  local repo = get_prop("silverchain_repo")
   if not repo then
     error("You need to run: 'pushblind set_repo silverchain <silverchain_repo>' first")
   end
