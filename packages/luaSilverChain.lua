@@ -37,7 +37,7 @@ function PushBlind.actions.build_deps()
 
   build_deps({
     project = "luaSilverChain",
-    dep = "ctextengine",
+    dep = "doTheWorld",
     actions = {"build_deps", "build"},
     sources = {
         { target = "release/doTheWorld.h", dest = "dependencies/doTheWorld.h" }
