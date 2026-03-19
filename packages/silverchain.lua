@@ -33,8 +33,8 @@ function PushBlind.actions.scratch_install()
 
   build_package("amalgamation", repo)
 
-  os.execute("cd " .. repo .. "/release && gcc 'SilverChain .c' -o silverChain")
-  os.execute("mv " .. repo .. "/release/silverChain ~/.local/bin/silverChain")
+  os.execute("cd " .. repo .. "/release && gcc 'SilverChain .c' -o silverchain")
+  os.execute("mv " .. repo .. "/release/silverchain ~/.local/bin/silverchain")
 end
 
 function PushBlind.actions.build()
