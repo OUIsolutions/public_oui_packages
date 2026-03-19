@@ -50,3 +50,12 @@ function PushBlind.actions.build()
   
   build_package(mode, repo)
 end
+
+function PushBlind.actions.amalgamate()
+  local repo = get_prop("silverchain_repo")
+  if not repo then
+    error("You need to run: 'pushblind set_repo silverchain <silverchain_repo>' first")
+  end
+
+  build_package("amalgamation", repo)
+end
