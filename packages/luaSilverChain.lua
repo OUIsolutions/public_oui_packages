@@ -20,7 +20,7 @@ function PushBlind.actions.build_deps()
   build_deps({
     project = "luaSilverChain",
     dep = "silverchain",
-    actions = {"build"},
+    actions = {"amalgamate"},
     sources = {
         { target = "release/CSilverChainApiNoDependenciesIncluded.h", dest = "dependencies/CSilverChainApiNoDependenciesIncluded.h" }
     }

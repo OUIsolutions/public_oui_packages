@@ -45,7 +45,7 @@ function PushBlind.actions.build()
 
   local mode = argv.get_flag_arg_by_index({ "mode" }, 1)
   if not mode then
-    error("You need to specify the mode: 'pushblind scratch_install silverchain --mode <mode>'")
+    error("You need to specify the mode: 'pushblind build silverchain --mode <mode>'")
   end
   
   build_package(mode, repo)
