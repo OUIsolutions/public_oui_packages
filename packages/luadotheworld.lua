@@ -34,8 +34,6 @@ function PushBlind.actions.build()
         error("You need to run: 'pushblind set_repo dotheworld <luadotheworld_repo>' first")
     end
 
-    
-    PushBlind.run_action("luadotheworld", "build_deps")
     os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder build_release")
 end
 
