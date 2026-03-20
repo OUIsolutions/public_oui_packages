@@ -80,6 +80,15 @@ function PushBlind.actions.build_deps()
 
     build_deps({
         project = "darwin",
+        dep = "luacembed",
+        actions = {"build_deps", "build"},
+        sources = {
+            { target = "release/LuaCEmbedOne.c", dest = "dependencies/LuaCEmbedOne.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
         dep = "luaargv",
         actions = {"build"},
         sources = {
@@ -113,6 +122,8 @@ function PushBlind.actions.build_deps()
             { target = "release/lua_c_amalgamator_dependencie_not_included.c", dest = "dependencies/lua_c_amalgamator_dependencie_not_included.c" },
         }
     })
+
+    print("Finished building dependencies for darwin")
 end
 
 function PushBlind.actions.scratch_install()
