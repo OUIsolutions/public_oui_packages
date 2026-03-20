@@ -27,6 +27,102 @@ function PushBlind.actions.repo_install()
     dtw.remove_any("darwin.out")
 end
 
+function PushBlind.actions.build_deps()
+    local repo = get_prop("darwin_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo darwin <darwin_repo>' first")
+    end
+
+    build_deps({
+        project = "darwin",
+        dep = "mdeclare",
+        actions = {"build"},
+        sources = {
+            { target = "release/MDeclareApiNoDependenciesIncluded.h", dest = "dependencies/MDeclareApiNoDependenciesIncluded.h" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaFluidJson",
+        actions = {"build"},
+        sources = {
+            { target = "release/luaFluidJson_no_dep.c", dest = "dependencies/luaFluidJson_no_dep.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaDoTheWorld",
+        actions = {"build_deps", "build"},
+        sources = {
+            { target = "release/luaDoTheWorld_no_dep.c", dest = "dependencies/luaDoTheWorld_no_dep.c" },
+        }
+    })
+
+    os.execute("cd "..repo.." && curl -L https://github.com/SamuelHenriqueDeMoraisVitrio/candangoEngine/releases/download/0.2.2/CandangoEngine.c -o dependencies/CandangoEngine.c")
+
+    build_deps({
+        project = "darwin",
+        dep = "ctextengine",
+        actions = {"build"},
+        sources = {
+            { target = "release/CTextEngineOne.c", dest = "dependencies/CTextEngineOne.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luamdeclare",
+        actions = {"build"},
+        sources = {
+            { target = "release/luamdeclare.c", dest = "dependencies/luamdeclare.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaargv",
+        actions = {"build"},
+        sources = {
+            { target = "release/luargv.c", dest = "dependencies/luargv.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaShip",
+        actions = {"build"},
+        sources = {
+            { target = "release/LuaShip.c", dest = "dependencies/LuaShip.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaSilverChain",
+        actions = {"build"},
+        sources = {
+            { target = "release/silverchain_no_dependecie_included.c", dest = "dependencies/silverchain_no_dependecie_included.c" },
+        }
+    })
+
+    build_deps({
+        project = "darwin",
+        dep = "luaCAmalgamator",
+        actions = {"build"},
+        sources = {
+            { target = "release/lua_c_amalgamator_dependencie_not_included.c", dest = "dependencies/lua_c_amalgamator_dependencie_not_included.c" },
+        }
+    })
+end
+
+function Pushblind.actions.scratch_install()
+    PushBlind.run_action("darwin", "build_deps")
+    PushBlind.run_action("darwin", "build")
+
+    local repo = get_prop("darwin_repo")
+end
 
 function PushBlind.actions.build()
    local repo = get_prop("darwin_repo")
