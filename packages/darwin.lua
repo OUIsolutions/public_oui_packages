@@ -92,7 +92,7 @@ function PushBlind.actions.build_deps()
         dep = "luaShip",
         actions = {"build"},
         sources = {
-            { target = "release/LuaShip.c", dest = "dependencies/LuaShip.c" },
+            { target = "realeses/LuaShip.lua", dest = "dependencies/LuaShip.lua" },
         }
     })
 
