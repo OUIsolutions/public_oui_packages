@@ -51,7 +51,7 @@ function PushBlind.actions.build_deps()
 
     build_deps({
         project = "darwin",
-        dep = "luaDoTheWorld",
+        dep = "luadotheworld",
         actions = {"build_deps", "build"},
         sources = {
             { target = "release/luaDoTheWorld_no_dep.c", dest = "dependencies/luaDoTheWorld_no_dep.c" },
