@@ -131,6 +131,10 @@ function PushBlind.actions.scratch_install()
     PushBlind.run_action("darwin", "build")
 
     local repo = get_prop("darwin_repo")
+    os.execute("cd "..repo.." && darwin run_blueprint --target amalgamation")
+    os.execute("cd "..repo.. "&& gcc release/darwin.c -o darwin")
+    os.execute("chmod +x "..repo.."/darwin")
+    os.execute("mv "..repo.."/release/darwin ~/.local/bin/darwin")
 end
 
 function PushBlind.actions.build()
