@@ -58,7 +58,7 @@ function PushBlind.actions.build_deps()
         }
     })
 
-    os.execute("cd "..repo.." && curl -L https://github.com/SamuelHenriqueDeMoraisVitrio/candangoEngine/releases/download/0.2.2/CandangoEngine.c -o dependencies/CandangoEngine.c")
+    os.execute("cd "..repo.." && curl -L https://github.com/SamuelHenriqueDeMoraisVitrio/candangoEngine/releases/download/0.2.2/CandangoEngine.c -o dependencies/candangoEngine.c")
 
     build_deps({
         project = "darwin",
