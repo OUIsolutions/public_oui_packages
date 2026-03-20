@@ -117,7 +117,7 @@ function PushBlind.actions.build_deps()
     })
 end
 
-function Pushblind.actions.scratch_install()
+function PushBlind.actions.scratch_install()
     PushBlind.run_action("darwin", "build_deps")
     PushBlind.run_action("darwin", "build")
 
