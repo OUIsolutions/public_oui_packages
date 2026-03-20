@@ -60,5 +60,5 @@ function PushBlind.actions.build()
         error("You need to run: 'pushblind set_repo luaSilverChain <luaSilverChain_repo>' first")
     end
 
-    os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder)
+    os.execute("cd "..repo.." && darwin run_blueprint build/ --mode folder")
 end
