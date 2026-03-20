@@ -6,8 +6,6 @@ function PushBlind.actions.build_deps()
     if not repo then
         error("You need to run: 'pushblind set_repo doTheWorld <doTheWorld_repo>' first")
     end
-
-    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
 end
 
 
