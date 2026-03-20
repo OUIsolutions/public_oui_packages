@@ -36,7 +36,7 @@ function PushBlind.actions.build_deps()
         dep = "mdeclare",
         actions = {"build"},
         sources = {
-            { target = "release/MDeclareApiNoDependenciesIncluded.h", dest = "dependencies/MDeclareApiNoDependenciesIncluded.h" },
+            { target = "release/MDeclareApiNoDependenciesIncluded.h ", dest = "dependencies/MDeclareApiNoDependenciesIncluded.h" },
         }
     })
 
