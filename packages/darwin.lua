@@ -83,7 +83,7 @@ function PushBlind.actions.build_deps()
         dep = "luaargv",
         actions = {"build"},
         sources = {
-            { target = "release/luargv.c", dest = "dependencies/luargv.c" },
+            { target = "luargv.c", dest = "dependencies/luargv.c" },
         }
     })
 
