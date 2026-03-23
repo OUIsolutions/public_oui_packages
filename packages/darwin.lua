@@ -117,7 +117,7 @@ function PushBlind.actions.build_deps()
     build_deps({
         project = "darwin",
         dep = "luaSilverChain",
-        actions = {"build"},
+        actions = {"build_deps", "build"},
         sources = {
             { target = "release/silverchain_no_dependecie_included.c", dest = "dependencies/silverchain_no_dependecie_included.c" },
         }
