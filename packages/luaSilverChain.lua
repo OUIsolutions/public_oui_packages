@@ -31,7 +31,7 @@ function PushBlind.actions.build_deps()
     dep = "ctextengine",
     actions = {"build"},
     sources = {
-        { target = "release/CTextEngine.h", dest = "dependencies/CTextEngine.h" }
+        { target = "release/CTextEngine.c", dest = "dependencies/CTextEngine.c" }
     }
   })
 
@@ -40,7 +40,7 @@ function PushBlind.actions.build_deps()
     dep = "doTheWorld",
     actions = {"build_deps", "build"},
     sources = {
-        { target = "release/doTheWorld.h", dest = "dependencies/doTheWorld.h" }
+        { target = "release/doTheWorld.c", dest = "dependencies/doTheWorld.c" }
     }
   })
 
