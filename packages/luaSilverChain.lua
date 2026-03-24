@@ -40,7 +40,7 @@ function PushBlind.actions.build_deps()
     dep = "doTheWorld",
     actions = {"build_deps", "build"},
     sources = {
-        { target = "release/doTheWorld.c", dest = "dependencies/doTheWorld.c" }
+        { target = "release/doTheWorldOne.c", dest = "dependencies/doTheWorldOne.c" }
     }
   })
 
