@@ -54,7 +54,7 @@ function PushBlind.actions.build_deps()
         dep = "BearSslTrustedAnchors",
         actions = {"build"},
         sources = {
-            { target = "BearSslTrustAnchors.c", dest = "dependencies/BearSslTrustAnchors.c" },
+            { target = "BearSSLTrustAnchors.c", dest = "dependencies/BearSSLTrustAnchors.c" },
         }
     })
     
