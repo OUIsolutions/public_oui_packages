@@ -15,8 +15,8 @@ function PushBlind.actions.build_deps()
         dep = "BearSslSingleUnit",
         actions = {"build"},
         sources = {
-            { target = "BearSSLSingleUnit.h", dest = "dependencies/BearSSLSingleUnit.h" },
-            { target = "BearSSLSingleUnit.c", dest = "dependencies/BearSSLSingleUnit.c" }
+            { target = "release/BearSSLSingleUnit.h", dest = "dependencies/BearSSLSingleUnit.h" },
+            { target = "release/BearSSLSingleUnit.c", dest = "dependencies/BearSSLSingleUnit.c" }
         }
     })
 
