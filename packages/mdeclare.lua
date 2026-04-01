@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("mdeclare")
+create_default_actions("mdeclare", "OUIsolutions/MDeclare")
 
 function PushBlind.actions.build()
   local repo = get_prop("mdeclare_repo")
