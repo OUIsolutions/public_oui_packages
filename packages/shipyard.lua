@@ -1,8 +1,5 @@
-
-
-
 relative_load('../utils/actions_factory.lua')
-create_default_actions("shipyard")
+create_default_actions("shipyard", "OUIsolutions/shipyard")
 
 
 function PushBlind.actions.install()

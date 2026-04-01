@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("luaFluidJson")
+create_default_actions("luaFluidJson", "OUIsolutions/LuaFluidJson")
 
 function PushBlind.actions.build()
   local repo = get_prop("luaFluidJson_repo")

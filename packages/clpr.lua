@@ -1,7 +1,7 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
 
-create_default_actions("clpr")
+create_default_actions("clpr", "OUIsolutions/clpr")
 
 function PushBlind.actions.build_deps()
     local repo = get_prop("clpr_repo")

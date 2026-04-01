@@ -1,6 +1,6 @@
 relative_load('../utils/utils.lua')
 relative_load('../utils/actions_factory.lua')
-create_default_actions("cwebstudio")
+create_default_actions("cwebstudio", "OUIsolutions/CWebStudio")
 
 
 function PushBlind.actions.scratch_install()

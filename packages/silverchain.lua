@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("silverchain")
+create_default_actions("silverchain", "OUIsolutions/SilverChain")
 
 function table_contains(tbl, val)
     for _, v in ipairs(tbl) do

@@ -1,6 +1,6 @@
 
 relative_load('../utils/actions_factory.lua')
-create_default_actions("cwebstudio_firmware")
+create_default_actions("cwebstudio_firmware", "OUIsolutions/CWebStudioFirmware")
 
 
 function PushBlind.actions.dep_install()

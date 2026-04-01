@@ -1,6 +1,6 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
-create_default_actions("luadotheworld")
+create_default_actions("luadotheworld", "OUIsolutions/LuaDoTheWorld")
 
 
 function PushBlind.actions.build_deps()

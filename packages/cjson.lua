@@ -1,2 +1,2 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("cjson")
+create_default_actions("cjson", "OUIsolutions/cJSON")

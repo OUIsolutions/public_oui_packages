@@ -1,6 +1,6 @@
 
 relative_load('../utils/actions_factory.lua')
-create_default_actions("cachify")
+create_default_actions("cachify", "OUIsolutions/cachify")
 
 -- Project is single file, no build_deps needed
 

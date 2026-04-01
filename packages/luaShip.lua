@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("luaShip")
+create_default_actions("luaShip", "OUIsolutions/LuaShip")
 
 function PushBlind.actions.build()
   local repo = get_prop("luaShip_repo")

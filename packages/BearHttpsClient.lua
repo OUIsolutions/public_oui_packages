@@ -1,7 +1,7 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
 
-create_default_actions("BearHttpsClient")
+create_default_actions("BearHttpsClient", "OUIsolutions/BearHttpsClient")
 
 function PushBlind.actions.build_deps()
     local bear_repo = get_prop("BearHttpsClient_repo")

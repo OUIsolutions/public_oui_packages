@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("luamdeclare")
+create_default_actions("luamdeclare", "OUIsolutions/LuaMDeclare")
 
 function PushBlind.actions.build()
   local repo = get_prop("luamdeclare_repo")

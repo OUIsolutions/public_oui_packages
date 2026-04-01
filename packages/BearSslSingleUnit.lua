@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("BearSslSingleUnit")
+create_default_actions("BearSslSingleUnit", "OUIsolutions/BearSslSingle-Unit")
   
 
 function PushBlind.actions.build()

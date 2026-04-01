@@ -1,6 +1,6 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
-create_default_actions("pushblind")
+create_default_actions("pushblind", "OUIsolutions/PushBlind")
 
 function PushBlind.actions.repo_install()
     local repo = get_prop("pushblind_repo")

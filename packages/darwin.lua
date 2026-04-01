@@ -1,6 +1,6 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("darwin")
 relative_load('../utils/utils.lua')
+create_default_actions("darwin", "OUIsolutions/darwin")
 
 function PushBlind.actions.repo_install()
     local repo = get_prop("darwin_repo")

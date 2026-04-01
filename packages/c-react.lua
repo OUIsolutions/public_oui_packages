@@ -1,6 +1,6 @@
 
 relative_load('../utils/actions_factory.lua')
-create_default_actions("c-react")
+create_default_actions("c-react", "OUIsolutions/C-React")
 
 
 function PushBlind.actions.publish()

@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("luaCAmalgamator")
+create_default_actions("luaCAmalgamator", "OUIsolutions/LuaCAmalgamator")
 
 function PushBlind.actions.build()
   local repo = get_prop("luaCAmalgamator_repo")

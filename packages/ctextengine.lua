@@ -1,7 +1,7 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
 
-create_default_actions("ctextengine")
+create_default_actions("ctextengine", "OUIsolutions/CTextEngine")
 
 function PushBlind.actions.build()
   local repo = get_prop("ctextengine_repo")

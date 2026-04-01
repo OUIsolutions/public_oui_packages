@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("luaSingleUnity")
+create_default_actions("luaSingleUnity", "OUIsolutions/LuaSingleUnity")
 
 function PushBlind.actions.build()
     local repo = get_prop("luaSingleUnity_repo")

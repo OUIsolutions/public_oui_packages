@@ -1,7 +1,7 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
 
-create_default_actions("luacembed")
+create_default_actions("luacembed", "OUIsolutions/LuaCEmbed")
 
 function PushBlind.actions.build_deps()
     local repo = get_prop("luacembed_repo")

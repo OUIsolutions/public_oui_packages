@@ -1,6 +1,6 @@
 
 relative_load('../utils/actions_factory.lua')
-create_default_actions("c2wasm")
+create_default_actions("c2wasm", "OUIsolutions/c2wasm")
 
 function PushBlind.actions.build()
     local repo = get_prop("c2wasm_repo")

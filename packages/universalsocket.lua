@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("universalsocket")
+create_default_actions("universalsocket", "samuelHenriqueDeMoraisVitrio/universalsocket")
   
 
 function PushBlind.actions.build()

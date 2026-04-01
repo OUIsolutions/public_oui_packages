@@ -1,6 +1,6 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
-create_default_actions("luaSilverChain")
+create_default_actions("luaSilverChain", "OUIsolutions/LuaSilverChain")
 
 function PushBlind.actions.build_deps()
   local repo = get_prop("luaSilverChain_repo")

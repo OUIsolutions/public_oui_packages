@@ -1,7 +1,7 @@
 relative_load('../utils/actions_factory.lua')
 relative_load('../utils/utils.lua')
 
-create_default_actions("luaargv")
+create_default_actions("luaargv", "OUIsolutions/luargv")
 
 function PushBlind.actions.build()
     local repo = get_prop("luaargv_repo")

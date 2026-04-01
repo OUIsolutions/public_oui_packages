@@ -1,5 +1,5 @@
 relative_load('../utils/actions_factory.lua')
-create_default_actions("doTheWorld")
+create_default_actions("doTheWorld", "OUIsolutions/DoTheWorld")
 
 function PushBlind.actions.build_deps()
     local repo = get_prop("doTheWorld_repo")
