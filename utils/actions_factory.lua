@@ -82,7 +82,7 @@ function create_default_actions(project_name, project_repository)
             print("Repository cloned to: " .. absolute_repo_path)
 
             local should_set_repo = argv.flags_exist({ "set-repo", "s" })
-            if not should_set_repo then
+            if should_set_repo then
                 set_prop(project_name .. "_repo", absolute_repo_path)
                 print("Repository prop path set")
             end
