@@ -4,6 +4,8 @@ relative_load('../utils/utils.lua')
 create_default_actions("BearHttpsClient", "OUIsolutions/BearHttpsClient")
 
 function PushBlind.actions.build_deps()
+
+    print("chamou o build da bear")
     local bear_repo = get_prop("BearHttpsClient_repo")
     if not bear_repo then
         error("You need to run: 'pushblind set_repo BearHttpsClient <BearHttpsClient_repo>' first")
