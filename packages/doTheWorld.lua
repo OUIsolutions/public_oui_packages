@@ -6,8 +6,17 @@ function PushBlind.actions.build_deps()
     if not repo then
         error("You need to run: 'pushblind set_repo doTheWorld <doTheWorld_repo>' first")
     end
+
+    os.execute("cd " .. repo .. " && darwin install darwindeps.json --soft")
 end
 
+function PushBlind.actions.amalgamate()
+    local repo = get_prop("doTheWorld_repo")
+    if not repo then
+        error("You need to run: 'pushblind set_repo doTheWorld <doTheWorld_repo>' first")
+    end
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target amalgamation_build")
+end
 
 function PushBlind.actions.build()
     local repo = get_prop("doTheWorld_repo")
