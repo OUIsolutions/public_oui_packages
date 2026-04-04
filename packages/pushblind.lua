@@ -36,7 +36,7 @@ function PushBlind.actions.repo_install()
     if not dtw.isfile(repo .. "/pushblind") then
         error("pushblind not found")
     end
-    dtw.copy_any_overwriting(repo .. "/pushblind", "/usr/local/bin/pushblind")
+    os.execute("sudo cp " .. repo .. "/pushblind /usr/local/bin/pushblind")
     dtw.remove_any(repo .. "/pushblind")
     
 end
