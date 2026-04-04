@@ -22,6 +22,8 @@ end
 
 function PushBlind.actions.scratch_install()
     PushBlind.run_action("pushblind", "build_deps")
+
+    PushBlind.run_action("pushblind", "repo_install")
 end
 function PushBlind.actions.repo_install()
     local repo = get_prop("pushblind_repo")
@@ -30,11 +32,9 @@ function PushBlind.actions.repo_install()
     end
 
     os.execute("cd " .. repo .. " && darwin install --soft")
-    os.execute("cd " .. repo .. " && darwin run_blueprint --target all")
+    os.execute("cd " .. repo .. " && darwin run_blueprint --target local_unix_bin")
     
-    if os_name == "linux" then
-        os.execute("sudo dpkg -i " .. repo .. "/release/pushblind.deb")
-    end
+    
 end
 function PushBlind.actions.publish()
     local repo = get_prop("pushblind_repo")
