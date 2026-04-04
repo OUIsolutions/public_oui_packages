@@ -14,6 +14,7 @@ function build_deps(props)
     for _, action in ipairs(props.actions) do
         print("Running action '" .. action .. "' for dependency '" .. props.dep .. "'")
         local ok,err = PushBlind.run_action(props.dep, action)
+        print(ok, err)
         if not ok then
             error(err)
         end
@@ -27,7 +28,8 @@ function build_deps(props)
             error("File not found: " .. src_path)
         end
         local dest_path = project_repo .. "/" .. source.dest
-        dtw.copy_any_overwriting(src_path, dest_path)
+        local ok, err = dtw.copy_any_overwriting(src_path, dest_path)
+        print(ok, err)
         print("Copied '" .. src_path .. "' to '" .. dest_path .. "'")
     end
 
