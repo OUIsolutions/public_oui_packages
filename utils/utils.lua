@@ -11,6 +11,13 @@ function build_deps(props)
         error("You need to run: 'pushblind set_repo " .. props.dep .. " <" .. props.dep .. "_repo>' first")
     end
 
+    print("\nRemoving old targets for dependency '" .. props.dep .. "'")
+    for _, source in ipairs(props.sources) do
+        local dest_path = project_repo .. "/" .. source.dest
+        print("Removing old target: " .. dest_path)
+        dtw.remove_any(dest_path)
+    end
+
     for _, action in ipairs(props.actions) do
         print("Running action '" .. action .. "' for dependency '" .. props.dep .. "'")
         local ok,err = PushBlind.run_action(props.dep, action)
