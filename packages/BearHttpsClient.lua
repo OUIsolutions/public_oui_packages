@@ -11,6 +11,9 @@ function PushBlind.actions.build_deps()
         error("You need to run: 'pushblind set_repo BearHttpsClient <BearHttpsClient_repo>' first")
     end
     os.execute("cd " .. bear_repo .. " && darwin install darwindeps.json --soft")
+   
+    if true then return true end
+    --ignore the code below
     build_deps({
         project = "BearHttpsClient",
         dep = "BearSslSingleUnit",
