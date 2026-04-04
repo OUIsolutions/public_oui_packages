@@ -33,7 +33,11 @@ function PushBlind.actions.repo_install()
 
     os.execute("cd " .. repo .. " && darwin install --soft")
     os.execute("cd " .. repo .. " && darwin run_blueprint --target local_unix_bin")
-    
+    if not dtw.isfile(repo .. "/pushblind") then
+        error("pushblind not found")
+    end
+    dtw.copy_any_overwriting(repo .. "/pushblind", "/usr/local/bin/pushblind")
+    dtw.remove_any(repo .. "/pushblind")
     
 end
 function PushBlind.actions.publish()
