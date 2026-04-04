@@ -14,10 +14,10 @@ function PushBlind.actions.scratch_install()
     if not pushblind_repo then
         error("You need to run: 'pushblind set_repo pushblind <pushblind_repo>' first")
     end
-    if not darwin.dtw.isfile(vibescript_repo .. "/release/amalgamation.c") then
+    if not dtw.isfile(vibescript_repo .. "/release/amalgamation.c") then
         error("impossible to generate vibescript amalgamation.c")
     end
-    darwin.dtw.copy_any_overwriting(vibescript_repo .. "/release/amalgamation.c", pushblind_repo .. "/dependencies/vibescript.c")
+   dtw.copy_any_overwriting(vibescript_repo .. "/release/amalgamation.c", pushblind_repo .. "/dependencies/vibescript.c")
 
 
 end
