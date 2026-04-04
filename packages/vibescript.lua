@@ -50,7 +50,7 @@ function PushBlind.actions.build_deps()
             { target = "release/BearHttpsClient.h", dest = "dependencies/BearHttpsClient.h" }
         }
     })
-
+    if true then return end 
     print("Building deps luaargv")
     build_deps({
         project = "vibescript",
