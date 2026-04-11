@@ -50,6 +50,16 @@ function PushBlind.actions.build_deps()
             { target = "release/BearHttpsClient.h", dest = "dependencies/BearHttpsClient.h" }
         }
     })
+
+    print("Building deps lplot")
+    build_deps({
+        project = "vibescript",
+        dep = "lplot",
+        actions = {"build"},
+        sources = {
+            { target = "release/lplot.lua", dest = "dependencies/lplot.lua" }
+        }
+    })
     if true then return end 
     print("Building deps luaargv")
     build_deps({
